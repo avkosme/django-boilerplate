@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+
+  web:
+    image: 'avkosme/django'
+    working_dir: /opt/webapp/web
+    volumes:
+      - .:/opt/webapp
