@@ -7,3 +7,13 @@ services:
     working_dir: /opt/webapp/web
     volumes:
       - .:/opt/webapp
+
+  postgres:
+    image: 'avkosme/postgresql'
+    privileged: true
+    volumes:
+      - postgres:/var/lib/pgsql/10/data/
+
+volumes:
+  postgres:
+    driver: local      
