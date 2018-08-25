@@ -1,0 +1,46 @@
+{% spaceless %}
+    {% load static %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>{{ page.title_tag }}</title>
+        <meta name="description" content="{{ page.meta_tag_description }}">
+        <meta name="keywords" content="{{ page.meta_tag_keywords }}">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="icon" href="{% static 'img/favicon.ico' %}"
+              type="image/gif" sizes="16x16">
+
+        {% block stylesheets %}
+            <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+        {% endblock stylesheets %}
+
+
+        {% block javascript %}
+        {% endblock javascript %}
+
+    </head>
+    <body>
+
+    <div class="w3-content content-wrapper">
+        {% block order-block %}
+        {% endblock %}
+
+        {% block content %}
+        {% endblock %}
+    </div>
+
+
+
+    {% block javascript-after %}
+    {% endblock javascript-after %}
+
+    {% block react %}
+    {% endblock react %}
+
+    </body>
+    </html>
+{% endspaceless %}
