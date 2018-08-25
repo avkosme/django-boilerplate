@@ -5,5 +5,16 @@ services:
   web:
     image: 'avkosme/django'
     working_dir: /opt/webapp/web
+    depends_on:
+      - postgres
     volumes:
       - .:/opt/webapp
+  postgres:
+    image: 'avkosme/postgresql'
+    privileged: true
+    volumes:
+      - postgres:/var/lib/pgsql/10/data/
+
+volumes:
+  postgres:
+    driver: local

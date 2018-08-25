@@ -3,6 +3,16 @@ version: '3'
 services:
 
   web:
-    command: bash -c "python3.7 manage.py migrate && python3.7 manage.py runserver 0.0.0.0:80"
+    command: bash -c "python3.7 manage.py migrate && python3.7 manage.py runserver 0.0.0.0:80 --settings core.settings.staging"
     ports:
       - 80:80
+    environment:
+      - SECRET_KEY=asdasd5!22434%66744dfsdfssdfs!s9ssdj
+      - POSTGRES_NAME=test_db
+      - POSTGRES_USER=test_user
+      - POSTGRES_PASSWORD=test_password
+      - POSTGRES_HOST=postgres
+      - POSTGRES_PORT=5432  
+  postgres:
+    ports:
+      - 5432:5432
