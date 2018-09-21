@@ -1,2 +1,14 @@
 Django==2.1
 psycopg2-binary
+django-environ
+unidecode
+uwsgi
+gunicorn
+djangorestframework
+Pillow
+mysqlclient
+mongoengine
+requests
+lxml
+redis
+celery

@@ -3,15 +3,14 @@ version: '3'
 services:
 
   web:
-    image: 'avkosme/django'
-    working_dir: /opt/webapp/web
+    image: avkosme/django
+    working_dir: /opt/webapp
     depends_on:
       - postgres
     volumes:
       - .:/opt/webapp
   postgres:
-    image: 'avkosme/postgresql'
-    privileged: true
+    image: postgres:10
     volumes:
       - postgres:/var/lib/pgsql/10/data/
 
