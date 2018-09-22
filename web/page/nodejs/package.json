@@ -1,0 +1,21 @@
+{
+  "name": "bars161.ru",
+  "version": "1.0.0",
+  "description": "Personal web-site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/.bin/gulp",
+    "build-styles": "node_modules/.bin/gulp sass"
+  },
+  "author": "Andrew Kostyuchenko",
+  "license": "ISC",
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "font-awesome": "^4.7.0",
+    "gulp": "^3.9.1",
+    "gulp-babel": "^8.0.0-beta.2",
+    "gulp-sass": "^4.0.1",
+    "gulp-uglify": "^3.0.1"
+  }
+}
