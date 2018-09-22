@@ -4,10 +4,11 @@ DIR="$( cd "$(dirname "$0")" ; pwd -P | sed -e 's/.bin//g')"
 
 # Start app - staging
 function run_staging() {
+    SETTINGS="--settings core.settings.staging"
     cd ${DIR}/web && \
-    python3.6 manage.py makemigrations users && \
-    python3.6 manage.py migrate && \
-    python3.6 manage.py runserver 0.0.0.0:80 --settings core.settings.staging
+    python3.6 manage.py makemigrations users $SETTINGS && \
+    python3.6 manage.py migrate $SETTINGS && \
+    python3.6 manage.py runserver 0.0.0.0:80 $SETTINGS
 }
 
 # Start app - production
