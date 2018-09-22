@@ -17,8 +17,13 @@ function run_production() {
     gunicorn -b 0.0.0.0:8080 core.wsgi --log-level debug --access-logfile /var/log/gunicorn.log
 }
 
+# Start app
 if [ $1 = "staging" ]; then
+
+# Satging env
   run_staging
 elif [ $1 = "production" ]; then
+
+# Production env
   run_production
 fi  

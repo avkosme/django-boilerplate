@@ -24,10 +24,18 @@ function collectstatic() {
 	find ${DIR}/web/static/css/* -type f -exec sed -i -e 's/url(\"\/static\//url(\"\//g' {} \;
 }
 
-
+# Start build
 if [ $1 = "staging" ]; then
-  build_nodejs "web/page/nodejs" "build-sass"
+
+# Build for staging
+  build_nodejs "web/page/nodejs" "build"
+elif [ $1 = "styles" ]; then
+
+# Build only styles
+	build_nodejs "web/page/nodejs" "build-styles"
 elif [ $1 = "production" ]; then
-  build_nodejs "web/page/nodejs" "build-sass"
+
+# Build production (all)
+  build_nodejs "web/page/nodejs" "build" && \
   collectstatic
 fi  

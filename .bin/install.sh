@@ -23,13 +23,19 @@ function python_requirements() {
 	pip3.6 install -r ${DIR}$1
 }
 
-# Install nodejs apps
-node_js "web/page/nodejs"
-
-
+# Start install
 if [ $1 = "staging" ]; then
+
+# Install for staging
+	node_js "web/page/nodejs" && \
   python_requirements "web/core/requirements/staging.txt"
+elif [ $1 = "nodejs" ]; then
+
+# Install only nodejs
+	node_js "web/page/nodejs"
 elif [ $1 = "production" ]; then
+
+# Install production (only backend)
   python_requirements "web/core/requirements/production.txt"
 fi  
 
