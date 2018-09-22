@@ -6,7 +6,7 @@ DIR="$( cd "$(dirname "$0")" ; pwd -P | sed -e 's/.bin//g')"
 function run_staging() {
     SETTINGS="--settings core.settings.staging"
     cd ${DIR}/web && \
-    python3.6 manage.py makemigrations users $SETTINGS && \
+    python3.6 manage.py makemigrations $SETTINGS && \
     python3.6 manage.py migrate $SETTINGS && \
     python3.6 manage.py runserver 0.0.0.0:80 $SETTINGS
 }
