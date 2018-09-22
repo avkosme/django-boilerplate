@@ -4,6 +4,7 @@ services:
 
   web:
     command: .bin/run.sh staging
+    restart: unless-stopped
     ports:
       - 80:80
     environment:
