@@ -28,7 +28,7 @@ if [ $1 = "staging" ]; then
 
 # Install for staging
 	node_js "web/page/nodejs" && \
-  python_requirements "web/core/requirements/staging.txt"
+	python_requirements "web/core/requirements/staging.txt"
 elif [ $1 = "nodejs" ]; then
 
 # Install only nodejs
@@ -36,6 +36,7 @@ elif [ $1 = "nodejs" ]; then
 elif [ $1 = "production" ]; then
 
 # Install production (only backend)
-  python_requirements "web/core/requirements/production.txt"
+	node_js "web/page/nodejs" && \
+	python_requirements "web/core/requirements/production.txt"
 fi  
 
