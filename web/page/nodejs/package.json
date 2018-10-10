@@ -1,7 +1,7 @@
 {
-  "name": "bars161.ru",
+  "name": "django-boilerplate",
   "version": "1.0.0",
-  "description": "Personal web-site",
+  "description": "Boilerplate django project",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -13,8 +13,8 @@
   "devDependencies": {
     "@babel/core": "^7.1.0",
     "font-awesome": "^4.7.0",
-    "gulp": "^3.9.1",
-    "gulp-babel": "^8.0.0-beta.2",
+    "gulp": "^4.0.0",
+    "gulp-babel": "^8.0.0",
     "gulp-sass": "^4.0.1",
     "gulp-uglify": "^3.0.1"
   }

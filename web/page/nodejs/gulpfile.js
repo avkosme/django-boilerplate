@@ -1,17 +1,30 @@
-var gulp = require('gulp');
-var babel = require("gulp-babel");
-var sass = require('gulp-sass');
-var uglify = require('gulp-uglify');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+const sass = require('gulp-sass');
+const { src, dest, series } = require('gulp');
 
-gulp.task('sass', function () {
-  return gulp.src('src/client/sass/styles.scss')
+const paths = {
+  styles: {
+    src: 'src/client/sass/styles.scss',
+    dest: '../static/css'
+  },
+  scripts: {
+    src: 'src/client/js/**/*.js',
+    dest: '../static/js'
+  }
+};
+
+
+function styles(done) {
+  src(paths.styles.src)
     .pipe(sass().on('error', sass.logError))
     .pipe(sass({ outputStyle: 'compressed' }).on('error', sass.logError))
-    .pipe(gulp.dest('../static/css'));
-});
+    .pipe(dest(paths.styles.dest));
+  done();
+}
 
-gulp.task('copy', function () {
-  gulp.src([
+function copy(done) {
+  src([
     'node_modules/font-awesome/**',
     '!node_modules/font-awesome/**/*.map',
     '!node_modules/font-awesome/.npmignore',
@@ -19,12 +32,16 @@ gulp.task('copy', function () {
     '!node_modules/font-awesome/*.md',
     '!node_modules/font-awesome/*.json'
   ])
-    .pipe(gulp.dest('../static/vendor/font-awesome'))
-});
+    .pipe(dest('../static/vendor/font-awesome'))
+  done();
+}
 
-gulp.task("default", ['sass', 'copy'], function () {
-  return gulp.src("src/client/js/**/*.js")
+function scripts(done) {
+  src(paths.scripts.src)
     .pipe(babel())
     .pipe(uglify())
-    .pipe(gulp.dest("../static/js"));
-});
+    .pipe(dest(paths.scripts.dest));
+  done();
+}
+
+exports.default = series(styles, copy, scripts);
