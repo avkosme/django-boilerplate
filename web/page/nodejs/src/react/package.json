@@ -1,0 +1,30 @@
+{
+  "name": "react-app-page",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "node_modules/.bin/webpack-command --config webpack.dev.js",
+    "build-production": "node_modules/.bin/webpack-command --config webpack.prod.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/react": "^16.4.9",
+    "@types/react-dom": "^16.0.7",
+    "@types/superagent": "^3.8.3",
+    "react": "^16.4.2",
+    "react-dom": "^16.4.2",
+    "superagent": "^3.8.3",
+    "webpack": "^4.16.5"
+  },
+  "devDependencies": {
+    "awesome-typescript-loader": "^5.2.0",
+    "source-map-loader": "^0.2.3",
+    "typescript": "^3.0.1",
+    "uglifyjs-webpack-plugin": "^1.2.7",
+    "webpack-command": "^0.4.1",
+    "webpack-merge": "^4.1.4"
+  }
+}

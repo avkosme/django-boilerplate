@@ -5,5 +5,15 @@
 <div class="w3-green w3-center w3-padding-16">
     <h1>W3.CSS<br>Faster and Better<br>Fully Responsive CSS</h1>
     <p>{{ page.content_set.get.content }}</p>
+    <div id="main-root"></div>
 </div>
 {% endblock %}
+
+{% block react %}
+    {% if debug %}
+        <script type="text/javascript" src="{% static 'js/vendors~main.bundle.js' %}"></script>
+        <script type="text/javascript" src="{% static 'js/bundle.js' %}"></script>
+    {% else %}
+        <script type="text/javascript" src="{% static 'js/bundle.js' %}"></script>
+    {% endif %}
+{% endblock react %}
