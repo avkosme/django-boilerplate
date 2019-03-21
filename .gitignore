@@ -369,3 +369,4 @@ __snapshots__/
 migrations/^[0-9].py
 .vscode
 db.sqlite3
+tmp
