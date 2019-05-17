@@ -1,0 +1,215 @@
+doctype html
+title W3.CSS Template
+meta(charset='UTF-8')
+meta(name='viewport' content='width=device-width, initial-scale=1')
+link(rel='stylesheet' href='https://www.w3schools.com/w3css/4/w3.css')
+link(rel='stylesheet' href='https://fonts.googleapis.com/css?family=Lato')
+link(rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+style.
+  body {font-family: "Lato", sans-serif}
+  .mySlides {display: none}
+// Navbar
+.w3-top
+  .w3-bar.w3-black.w3-card
+    a.w3-bar-item.w3-button.w3-padding-large.w3-hide-medium.w3-hide-large.w3-right(href='javascript:void(0)' onclick='myFunction()' title='Toggle Navigation Menu')
+      i.fa.fa-bars
+    a.w3-bar-item.w3-button.w3-padding-large(href='#') HOME
+    a.w3-bar-item.w3-button.w3-padding-large.w3-hide-small(href='#band') BAND
+    a.w3-bar-item.w3-button.w3-padding-large.w3-hide-small(href='#tour') TOUR
+    a.w3-bar-item.w3-button.w3-padding-large.w3-hide-small(href='#contact') CONTACT
+    .w3-dropdown-hover.w3-hide-small
+      button.w3-padding-large.w3-button(title='More')
+        | MORE 
+        i.fa.fa-caret-down
+      .w3-dropdown-content.w3-bar-block.w3-card-4
+        a.w3-bar-item.w3-button(href='#') Merchandise
+        a.w3-bar-item.w3-button(href='#') Extras
+        a.w3-bar-item.w3-button(href='#') Media
+    a.w3-padding-large.w3-hover-red.w3-hide-small.w3-right(href='javascript:void(0)')
+      i.fa.fa-search
+// Navbar on small screens (remove the onclick attribute if you want the navbar to always show on top of the content when clicking on the links)
+#navDemo.w3-bar-block.w3-black.w3-hide.w3-hide-large.w3-hide-medium.w3-top(style='margin-top:46px')
+  a.w3-bar-item.w3-button.w3-padding-large(href='#band' onclick='myFunction()') BAND
+  a.w3-bar-item.w3-button.w3-padding-large(href='#tour' onclick='myFunction()') TOUR
+  a.w3-bar-item.w3-button.w3-padding-large(href='#contact' onclick='myFunction()') CONTACT
+  a.w3-bar-item.w3-button.w3-padding-large(href='#' onclick='myFunction()') MERCH
+// Page content
+.w3-content(style='max-width:2000px;margin-top:46px')
+  // Automatic Slideshow Images
+  .mySlides.w3-display-container.w3-center
+    img(src='/w3images/la.jpg' style='width:100%')
+    .w3-display-bottommiddle.w3-container.w3-text-white.w3-padding-32.w3-hide-small
+      h3 Los Angeles
+      p
+        b We had the best time playing at Venice Beach!
+  .mySlides.w3-display-container.w3-center
+    img(src='/w3images/ny.jpg' style='width:100%')
+    .w3-display-bottommiddle.w3-container.w3-text-white.w3-padding-32.w3-hide-small
+      h3 New York
+      p
+        b The atmosphere in New York is lorem ipsum.
+  .mySlides.w3-display-container.w3-center
+    img(src='/w3images/chicago.jpg' style='width:100%')
+    .w3-display-bottommiddle.w3-container.w3-text-white.w3-padding-32.w3-hide-small
+      h3 Chicago
+      p
+        b Thank you, Chicago - A night we won&apos;t forget.
+  // The Band Section
+  #band.w3-container.w3-content.w3-center.w3-padding-64(style='max-width:800px')
+    h2.w3-wide THE BAND
+    p.w3-opacity
+      i We love music
+    p.w3-justify
+      | We have created a fictional band website. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+      | ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum consectetur
+      | adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+    .w3-row.w3-padding-32
+      .w3-third
+        p Name
+        img.w3-round.w3-margin-bottom(src='/w3images/bandmember.jpg' alt='Random Name' style='width:60%')
+      .w3-third
+        p Name
+        img.w3-round.w3-margin-bottom(src='/w3images/bandmember.jpg' alt='Random Name' style='width:60%')
+      .w3-third
+        p Name
+        img.w3-round(src='/w3images/bandmember.jpg' alt='Random Name' style='width:60%')
+  // The Tour Section
+  #tour.w3-black
+    .w3-container.w3-content.w3-padding-64(style='max-width:800px')
+      h2.w3-wide.w3-center TOUR DATES
+      p.w3-opacity.w3-center
+        i Remember to book your tickets!
+      br
+      ul.w3-ul.w3-border.w3-white.w3-text-grey
+        li.w3-padding
+          | September 
+          span.w3-tag.w3-red.w3-margin-left Sold out
+        li.w3-padding
+          | October 
+          span.w3-tag.w3-red.w3-margin-left Sold out
+        li.w3-padding
+          | November 
+          span.w3-badge.w3-right.w3-margin-right 3
+      .w3-row-padding.w3-padding-32(style='margin:0 -16px')
+        .w3-third.w3-margin-bottom
+          img.w3-hover-opacity(src='/w3images/newyork.jpg' alt='New York' style='width:100%')
+          .w3-container.w3-white
+            p
+              b New York
+            p.w3-opacity Fri 27 Nov 2016
+            p Praesent tincidunt sed tellus ut rutrum sed vitae justo.
+            button.w3-button.w3-black.w3-margin-bottom(onclick="document.getElementById('ticketModal').style.display='block'") Buy Tickets
+        .w3-third.w3-margin-bottom
+          img.w3-hover-opacity(src='/w3images/paris.jpg' alt='Paris' style='width:100%')
+          .w3-container.w3-white
+            p
+              b Paris
+            p.w3-opacity Sat 28 Nov 2016
+            p Praesent tincidunt sed tellus ut rutrum sed vitae justo.
+            button.w3-button.w3-black.w3-margin-bottom(onclick="document.getElementById('ticketModal').style.display='block'") Buy Tickets
+        .w3-third.w3-margin-bottom
+          img.w3-hover-opacity(src='/w3images/sanfran.jpg' alt='San Francisco' style='width:100%')
+          .w3-container.w3-white
+            p
+              b San Francisco
+            p.w3-opacity Sun 29 Nov 2016
+            p Praesent tincidunt sed tellus ut rutrum sed vitae justo.
+            button.w3-button.w3-black.w3-margin-bottom(onclick="document.getElementById('ticketModal').style.display='block'") Buy Tickets
+  // Ticket Modal
+  #ticketModal.w3-modal
+    .w3-modal-content.w3-animate-top.w3-card-4
+      header.w3-container.w3-teal.w3-center.w3-padding-32
+        span.w3-button.w3-teal.w3-xlarge.w3-display-topright(onclick="document.getElementById('ticketModal').style.display='none'") &times;
+        h2.w3-wide
+          i.fa.fa-suitcase.w3-margin-right
+          | Tickets
+      .w3-container
+        p
+          label
+            i.fa.fa-shopping-cart
+            |  Tickets, $15 per person
+        input.w3-input.w3-border(type='text' placeholder='How many?')
+        p
+          label
+            i.fa.fa-user
+            |  Send To
+        input.w3-input.w3-border(type='text' placeholder='Enter email')
+        button.w3-button.w3-block.w3-teal.w3-padding-16.w3-section.w3-right
+          | PAY 
+          i.fa.fa-check
+        button.w3-button.w3-red.w3-section(onclick="document.getElementById('ticketModal').style.display='none'")
+          | Close 
+          i.fa.fa-remove
+        p.w3-right
+          | Need 
+          a.w3-text-blue(href='#') help?
+  // The Contact Section
+  #contact.w3-container.w3-content.w3-padding-64(style='max-width:800px')
+    h2.w3-wide.w3-center CONTACT
+    p.w3-opacity.w3-center
+      i Fan? Drop a note!
+    .w3-row.w3-padding-32
+      .w3-col.m6.w3-large.w3-margin-bottom
+        i.fa.fa-map-marker(style='width:30px')
+        |  Chicago, US
+        br
+        i.fa.fa-phone(style='width:30px')
+        |  Phone: +00 151515
+        br
+        i.fa.fa-envelope(style='width:30px')  
+        |  Email: mail@mail.com
+        br
+      .w3-col.m6
+        form(action='/action_page.php' target='_blank')
+          .w3-row-padding(style='margin:0 -16px 8px -16px')
+            .w3-half
+              input.w3-input.w3-border(type='text' placeholder='Name' required='' name='Name')
+            .w3-half
+              input.w3-input.w3-border(type='text' placeholder='Email' required='' name='Email')
+          input.w3-input.w3-border(type='text' placeholder='Message' required='' name='Message')
+          button.w3-button.w3-black.w3-section.w3-right(type='submit') SEND
+  // End Page Content
+// Image of location/map
+img.w3-image.w3-greyscale-min(src='/w3images/map.jpg' style='width:100%')
+// Footer
+footer.w3-container.w3-padding-64.w3-center.w3-opacity.w3-light-grey.w3-xlarge
+  i.fa.fa-facebook-official.w3-hover-opacity
+  i.fa.fa-instagram.w3-hover-opacity
+  i.fa.fa-snapchat.w3-hover-opacity
+  i.fa.fa-pinterest-p.w3-hover-opacity
+  i.fa.fa-twitter.w3-hover-opacity
+  i.fa.fa-linkedin.w3-hover-opacity
+  p.w3-medium
+    | Powered by 
+    a(href='https://www.w3schools.com/w3css/default.asp' target='_blank') w3.css
+script.
+  // Automatic Slideshow - change image every 4 seconds
+  var myIndex = 0;
+  carousel();
+  function carousel() {
+  var i;
+  var x = document.getElementsByClassName("mySlides");
+  for (i = 0; i < x.length; i++) {
+  x[i].style.display = "none";
+  }
+  myIndex++;
+  if (myIndex > x.length) {myIndex = 1}
+  x[myIndex-1].style.display = "block";
+  setTimeout(carousel, 4000);
+  }
+  // Used to toggle the menu on small screens when clicking on the menu button
+  function myFunction() {
+  var x = document.getElementById("navDemo");
+  if (x.className.indexOf("w3-show") == -1) {
+  x.className += " w3-show";
+  } else {
+  x.className = x.className.replace(" w3-show", "");
+  }
+  }
+  // When the user clicks anywhere outside of the modal, close it
+  var modal = document.getElementById('ticketModal');
+  window.onclick = function(event) {
+  if (event.target == modal) {
+  modal.style.display = "none";
+  }
+  }
