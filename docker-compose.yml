@@ -2,17 +2,37 @@ version: '3'
 
 services:
 
+
   web:
-    image: avkosme/django
-    working_dir: /opt/webapp
+    build:
+      context: .
+      dockerfile: ./docker/Dockerfile
+    command: python3.6 manage.py runserver 0.0.0.0:80 --settings core.settings.staging
+    working_dir: /opt/webapp/web
+    env_file:
+      - .env
+    restart: unless-stopped
+    ports:
+      - 8000:80
     depends_on:
       - postgres
+      - redis
     volumes:
       - .:/opt/webapp
+
+
   postgres:
     image: postgres:10
+    env_file:
+      - .env
+    ports:
+      - 5432:5432
     volumes:
       - postgres:/var/lib/pgsql/10/data/
+
+  redis:
+    image: redis
+
 
 volumes:
   postgres:
