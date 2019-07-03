@@ -1,4 +1,4 @@
-Django==2.1.7
+Django==2.1.10
 psycopg2-binary
 django-environ
 unidecode
