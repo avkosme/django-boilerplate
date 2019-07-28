@@ -1,4 +1,4 @@
-Django==2.1.10
+Django==2.2.3
 psycopg2-binary
 django-environ
 unidecode
@@ -6,7 +6,6 @@ uwsgi
 gunicorn
 djangorestframework
 Pillow
-mysqlclient
 mongoengine
 requests
 lxml
