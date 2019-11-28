@@ -19,6 +19,7 @@ env = environ.Env()
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ROOT_DIR = environ.Path(__file__) - 4
 APPS_DIR = ROOT_DIR.path('web')
+PUBLIC_DIR = ROOT_DIR.path('public')
 
 
 # Quick-start development settings - unsuitable for production
@@ -39,6 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'users.apps.UsersConfig',
     'page.apps.PageConfig',
+    'entities.apps.EntitiesConfig',
+    'events.apps.EventsConfig',
 ]
 
 MIDDLEWARE = [
@@ -132,6 +135,11 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
 
-STATIC_ROOT = str(APPS_DIR.path('static')) 
+STATIC_ROOT = str(APPS_DIR.path('static'))
 STATIC_URL = '/static/'
 MEDIA_ROOT = str(ROOT_DIR.path('media'))
+STATICFILES_DIRS = [
+#    str(APPS_DIR.path('static')),
+    os.path.join(PUBLIC_DIR, "static"),
+]
+

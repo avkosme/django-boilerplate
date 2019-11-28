@@ -8,6 +8,8 @@ from django.contrib.auth.models import AbstractUser, UserManager
 
 class User(AbstractUser):
     objects = UserManager()
+    is_manager = models.BooleanField(default=False)
+    is_agent = models.BooleanField(default=False)
 
     @staticmethod
     def user_by_token(**kwargs):
@@ -20,6 +22,28 @@ class User(AbstractUser):
         user = User.objects.get(pk=token.user_id)
 
         return token, user
+
+
+class Manager(models.Model):
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        help_text='Менеджер',
+        verbose_name='Менеджер',
+        related_name='manager',
+        related_query_name='manager',
+    )
+
+
+class Agent(models.Model):
+    user = models.OneToOneField(
+        User,
+        on_delete=models.CASCADE,
+        help_text='Агент',
+        verbose_name='Агент',
+        related_name='agent',
+        related_query_name='agent',
+    )
 
 
 class Phone(models.Model):
