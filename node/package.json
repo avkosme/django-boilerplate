@@ -48,7 +48,7 @@
     "include-media": "^1.4.9",
     "jquery": "^3.4.1",
     "merge-stream": "^2.0.0",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "owl.carousel": "^2.3.4",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
