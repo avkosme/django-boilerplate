@@ -46,7 +46,7 @@
     "gulp-uglify": "^3.0.2",
     "gulp-util": "^3.0.8",
     "include-media": "^1.4.9",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "merge-stream": "^2.0.0",
     "node-sass": "^4.12.0",
     "owl.carousel": "^2.3.4",
